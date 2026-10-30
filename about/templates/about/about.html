@@ -1,0 +1,88 @@
+{% extends 'about/base.html' %}
+
+{% block content %}
+    <!-- Encabezado de la página -->
+    <section class="how-it-works-hero">
+        <div class="how-it-works-container">
+            <nav class="breadcrumbs">
+                <a href="/">Inicio</a> &rsaquo; <span>Cómo funciona</span>
+            </nav>
+            <h1>Encuentra al profesional ideal para tu hogar en 3 simples pasos</h1>
+            <p>AlTiro te conecta de forma directa, rápida y transparente con especialistas verificados cerca de ti.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Pasos -->
+    <main class="main-container">
+        <div class="steps-grid">
+            
+            <!-- Paso 1 -->
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-icon">🔍</div>
+                <h3>Busca por oficio o comuna</h3>
+                <p>Ingresa lo que necesitas reparar o instalar y selecciona tu ubicación para ver a los profesionales disponibles cerca de ti.</p>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-icon">🛡️</div>
+                <h3>Compara perfiles verificados</h3>
+                <p>Revisa la identidad del maestro, sus certificaciones vigentes (como la licencia SEC en gas y electricidad) y las valoraciones de otros vecinos.</p>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-icon">💬</div>
+                <h3>Contacta directamente</h3>
+                <p>Escríbele o llámalo de forma directa. Acuerda los detalles, presupuesto y horario del trabajo sin intermediarios ni comisiones extra.</p>
+            </div>
+
+        </div>
+
+        <!-- Bloque informativo adicional -->
+        <div class="empty-state-card info-banner-card">
+            <h2>¿Eres un profesional o especialista?</h2>
+            <p class="empty-description">
+                Únete a nuestra plataforma y conecta con cientos de vecinos que buscan tus servicios diariamente en tu comuna.
+            </p>
+            <a href="/ofrecerServicios" class="btn-signup" style="display: inline-block; text-decoration: none;">Ofrecer mis servicios</a>
+        </div>
+    </main>
+
+    <!-- Pie de Garantías y Beneficios -->
+    <footer class="features-footer">
+        <div class="features-container">
+            <div class="feature-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <strong>Identidad verificada</strong>
+                    <p>Cédula y RUT confirmados, uno por uno.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <strong>Licencias al día</strong>
+                    <p>Licencia SEC vigente. El día que vence, deja de aparecer.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <strong>Valoraciones reales</strong>
+                    <p>Solo de trabajos que se hicieron.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <strong>Sin comisiones</strong>
+                    <p>Ni a ti ni al maestro. Nunca.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

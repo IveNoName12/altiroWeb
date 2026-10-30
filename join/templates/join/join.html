@@ -1,0 +1,81 @@
+{% extends 'join/base.html' %}
+
+{% block content %}
+<main class="main-container">
+    
+    <!-- Migas de pan -->
+    <nav class="breadcrumbs">
+        <a href="/">Inicio</a> &rsaquo; <span>Ofrecer mis servicios</span>
+    </nav>
+
+    <h1 class="page-title">¡Únete a nosotros!</h1>
+
+    <div class="offer-services-grid">
+        
+        <!-- Formulario de Registro de Maestro -->
+        <div class="card-box form-card">
+            <form action="#" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+                </div>
+
+                <div class="form-group">
+                    <label for="especialidad">Especialidad</label>
+                    <input type="text" id="especialidad" name="especialidad" required placeholder="Ej: Gasfitería, Electricidad">
+                </div>
+
+                <div class="form-group">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" name="direccion" required placeholder="Ej: Av. Principal 123">
+                </div>
+
+                <!-- Sección para Cargar Carné -->
+                <div class="upload-section">
+                    <div class="upload-info">
+                        <h3>Subir foto de carné</h3>
+                        <p class="upload-subtitle">¡Ayúdanos a identificarte!</p>
+                        <p class="upload-instructions">Procura buena visibilidad en los siguientes datos:</p>
+                        <ul>
+                            <li>RUT</li>
+                            <li>Nombres y apellidos</li>
+                            <li>Su rostro</li>
+                        </ul>
+                    </div>
+
+                    <div class="upload-box">
+                        <input type="file" id="foto_carne" name="foto_carne" accept="image/*" required class="file-input">
+                        <label for="foto_carne" class="upload-label">
+                            <span class="upload-icon">📤</span>
+                            <span class="upload-text">Seleccionar archivo</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-signup btn-submit-full">Enviar solicitud</button>
+            </form>
+        </div>
+
+        <!-- Tarjeta Informativa Lateral -->
+        <div class="card-box info-card">
+            <h2>¿Por qué nos importa tu unión?</h2>
+            <hr class="divider">
+            
+            <p>
+                Tu unión con nosotros es importante para aumentar la red de maestros y poder llegar a más clientes.
+            </p>
+
+            <p>
+                En estos momentos tenemos un total de <strong>20 maestros</strong> en tu zona.
+            </p>
+
+            <p class="highlight-text">
+                ¡Únete a nosotros!
+            </p>
+        </div>
+
+    </div>
+</main>
+{% endblock %}

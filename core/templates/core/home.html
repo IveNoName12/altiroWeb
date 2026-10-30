@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoMaestro - Encuentra a tu profesional de confianza</title>
+    <!-- Carga del archivo CSS externo -->
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+</head>
+<body>
+
+    <!-- Header / Navegación -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo-link">
+                <img src="{% static 'core/assets/logo.png' %}" alt="Inicio" class="logo-img">
+            </a>
+            <nav class="nav-links">
+                <a href="/buscarMaestros">Buscar maestros</a>
+                <a href="/about">Cómo funciona</a>
+                <a href="/ofrecerServicios">Ofrecer mis servicios</a>
+            </nav>
+            <div class="auth-buttons">
+                <a href="/login" class="btn-login">Iniciar sesión</a>
+                <a href="/login" class="btn-signup">Crear cuenta</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub-categorías superiores -->
+    <div class="sub-nav">
+        <a>Electricidad</a>
+        <a>Gasfitería</a>
+        <a>Gas y calefont</a>
+        <a>Piscinas</a>
+        <a>Techumbre</a>
+        <a>Pintura</a>
+        <a>Cerrajería</a>
+        <a>Jardinería</a>
+    </div>
+
+    <!-- Sección Hero con fondo e información principal -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="brand-tag">🛠️ AlTiro</div>
+            <h1>Maestros <span>AlTiro</span>, sin sustos</h1>
+            <p>Gásfiter, electricistas, piscinas y más. Identidad confirmada, licencia SEC vigente.</p>
+        </div>
+
+        <!-- Tarjeta Flotante de Búsqueda -->
+        <div class="search-card">
+            <div class="search-card-header">
+                <h3>Encuentra al maestro que necesitas</h3>
+            </div>
+            
+            <form action="#" method="GET" class="search-form">
+                <div class="input-group flex-grow">
+                    <label for=" oficio">Oficio o problema</label>
+                    <div class="input-with-icon">
+                        <span class="search-icon"></span>
+                        <input type="text" id="oficio" name="q" placeholder="Gásfiter, se llueve el techo, agua verde...">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="region">Región</label>
+                    <select id="region" name="region">
+                        <option value="biobio">Bío Bío</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="comuna">Comuna</label>
+                    <select id="comuna" name="comuna">
+                        <option value="nunoa">Concepción</option>
+                        <option value="providencia">Talcahuano</option>
+                        <option value="santiago">San Pedro de la Paz</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-search">Buscar maestros</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Sección de Categorías Rápidas -->
+    <section class="categories-section">
+        <h2>¿Qué necesitas hoy?</h2>
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="cat-icon">⚡</div>
+                <span>Electricidad</span>
+            </div>
+            <div class="category-card">
+                <div class="cat-icon">💧</div>
+                <span>Gasfitería</span>
+            </div>
+            <div class="category-card">
+                <div class="cat-icon">🔥</div>
+                <span>Gas y calefont</span>
+            </div>
+            <div class="category-card">
+                <div class="cat-icon">🏊</div>
+                <span>Piscinas</span>
+            </div>
+            <div class="category-card">
+                <div class="cat-icon">🏠</div>
+                <span>Techumbre</span>
+            </div>
+            <div class="category-card">
+                <div class="cat-icon">🔐</div>
+                <span>Cerrajería</span>
+            </div>
+
+            <div class="category-card">
+                <div class="cat-icon">🌱</div>
+                <span>Jardinería</span>
+            </div>
+            <div class="category-card">
+                <div class="cat-icon">🖌️</div>
+                <span>Pintura</span>
+            </div>
+
+            <div class="category-card">
+                <div class="cat-icon">🔌</div>
+                <span>Electrodomésticos</span>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

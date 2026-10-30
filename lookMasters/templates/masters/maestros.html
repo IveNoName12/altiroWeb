@@ -1,0 +1,154 @@
+{% extends 'masters/base.html' %}
+
+{% block content %}
+    <!-- Sub-navegación horizontal de rubros -->
+    <nav class="sub-nav">
+        <div class="sub-nav-track">
+            <a href="#">Electricidad</a>
+            <a href="#">Gasfitería</a>
+            <a href="#">Gas y calefont</a>
+            <a href="#">Piscinas</a>
+            <a href="#">Techumbre</a>
+            <a href="#">Pintura</a>
+            <a href="#">Cerrajería</a>
+            <a href="#">Jardinería</a>
+            <a href="#">Aseo</a>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal de Búsqueda -->
+    <main class="main-container">
+        
+        <!-- Migas de pan -->
+        <nav class="breadcrumbs">
+            <a href="/">Inicio</a> &rsaquo; <span>Buscar maestros</span>
+        </nav>
+
+        <div class="content-layout">
+            
+            <!-- Panel Lateral de Filtros -->
+            <aside class="sidebar-filters">
+                <h2>Filtrar búsqueda</h2>
+                
+                <form action="#" method="GET" id="filter-form">
+                    <div class="filter-group">
+                        <label for="servicio">Servicio</label>
+                        <select id="servicio" name="servicio">
+                            <option value="">Todos los oficios</option>
+                            <option value="electricidad">Electricidad</option>
+                            <option value="gasfiteria">Gasfitería</option>
+                            <option value="gas">Gas y calefont</option>
+                            <option value="pintura">Pintura</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="region">Región</label>
+                        <select id="region" name="region">
+                            <option value="">Todo Chile</option>
+                            <option value="rm">Metropolitana de Santiago</option>
+                            <option value="valparaiso">Valparaíso</option>
+                            <option value="biobio">Bío Bío</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Ordenar por</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="orden" value="evaluados" checked>
+                                Mejor evaluados
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="orden" value="precio">
+                                Precio de visita
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="orden" value="recientes">
+                                Recién incorporados
+                            </label>
+                        </div>
+                    </div>
+                </form>
+
+                <p class="filter-disclaimer">
+                    Todos los maestros del listado tienen identidad verificada y perfil aprobado. Los oficios regulados además muestran su licencia SEC vigente con la clase que los habilita[cite: 2].
+                </p>
+            </aside>
+
+            <!-- Sección de Resultados / Estado Vacío -->
+            <section class="results-container">
+                <header class="results-header">
+                    <h1>Maestros en todo Chile</h1>
+                    <span class="results-count">0 maestros disponibles</span>
+                </header>
+
+                <!-- Estado Vacío (Sin resultados) -->
+                <div class="empty-state-card">
+                    <h2>Todavía no hay maestros en todo Chile</h2>
+                    <p class="empty-description">
+                        Estamos partiendo comuna por comuna. Déjanos tu correo y te avisamos apenas haya alguien — así sabemos también dónde nos falta gente[cite: 2].
+                    </p>
+
+                    <!-- Caja de Notificación por Comuna -->
+                    <div class="notify-box">
+                        <h3>¿Te avisamos cuando haya alguien en tu comuna?</h3>
+                        <p>Déjanos tu correo y te escribimos apenas se publique un maestro de ese oficio en tu comuna. Nada más — no te mandamos publicidad[cite: 2].</p>
+                        
+                        <form action="#" method="POST" class="notify-form">
+                            {% csrf_token %}
+                            <div class="notify-inputs">
+                                <select name="comuna_notif" class="select-comuna" required>
+                                    <option value="" disabled selected>¿En qué comuna?</option>
+                                    <option value="nunoa">Ñuñoa</option>
+                                    <option value="providencia">Providencia</option>
+                                    <option value="santiago">Santiago</option>
+                                </select>
+                                
+                                <div class="email-submit-group">
+                                    <input type="email" name="email" placeholder="tu@correo.cl" required>
+                                    <button type="submit" class="btn-notify">Avísenme</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Pie de Garantías y Beneficios -->
+    <footer class="features-footer">
+        <div class="features-container">
+            <div class="feature-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <strong>Identidad verificada</strong>
+                    <p>Cédula y RUT confirmados, uno por uno.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <strong>Licencias al día</strong>
+                    <p>Licencia SEC vigente. El día que vence, deja de aparecer.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <strong>Valoraciones reales</strong>
+                    <p>Solo de trabajos que se hicieron.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="check-icon">✓</span>
+                <div>
+                    <strong>Sin comisiones</strong>
+                    <p>Ni a ti ni al maestro. Nunca.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

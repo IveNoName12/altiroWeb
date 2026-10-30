@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoMaestro - Encuentra a tu profesional de confianza</title>
+    <!-- Carga del archivo CSS externo -->
+    <link rel="stylesheet" href="{% static 'about/css/style.css' %}">
+</head>
+<body>
+
+    <!-- Header / Navegación -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo-link">
+    <img src="{% static 'core/assets/logo.png' %}" alt="Inicio" class="logo-img">
+</a>
+            <nav class="nav-links">
+                <a href="/buscarMaestros">Buscar maestros</a>
+                <a href="/about">Cómo funciona</a>
+                <a href="/ofrecerServicios">Ofrecer mis servicios</a>
+            </nav>
+            <div class="auth-buttons">
+                <a href="/login" class="btn-login">Iniciar sesión</a>
+                <a href="/login" class="btn-signup">Crear cuenta</a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Sección Hero con fondo e información principal -->
+    {% block content %}
+    {% endblock %}
+
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends "logIn/base.html" %}
+{% load static %}
+
+{% block title %}Iniciar sesión{% endblock %}
+
+{% block content %}
+    <form class="login-form" method="post">
+                {% csrf_token %}
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" autocomplete="email" required placeholder="ejemplo@dominio.com">
+
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" autocomplete="current-password" required>
+
+                <button type="submit" class="btn-login">Iniciar sesión</button>
+            </form>
+{% endblock %}
