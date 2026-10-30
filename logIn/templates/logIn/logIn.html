@@ -4,7 +4,7 @@
 {% block title %}Iniciar sesión{% endblock %}
 
 {% block content %}
-    <form class="login-form" method="post">
+    <form class="login-form" method="POST">
                 {% csrf_token %}
                 <label for="email">Correo electrónico</label>
                 <input type="email" id="email" name="email" autocomplete="email" required placeholder="ejemplo@dominio.com">
@@ -13,5 +13,7 @@
                 <input type="password" id="password" name="password" autocomplete="current-password" required>
 
                 <button type="submit" class="btn-login">Iniciar sesión</button>
-            </form>
+    </form>
+
+        
 {% endblock %}
