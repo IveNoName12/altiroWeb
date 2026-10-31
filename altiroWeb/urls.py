@@ -29,7 +29,7 @@ urlpatterns = [
 
     path('register/', login_views.register, name='register'),
     path('login/', login_views.login_view, name='login'),
-    path('logout/', auth_views.LogoutView.as_view(next_page='/'), name='logout'),
+    path('logout/', login_views.logout_view, name='logout'),
 
 
     path('buscarMaestros/', masters_views.masters, name='masters'),

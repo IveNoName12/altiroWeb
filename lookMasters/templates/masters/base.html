@@ -22,8 +22,13 @@
                 <a href="/ofrecerServicios">Ofrecer mis servicios</a>
             </nav>
             <div class="auth-buttons">
-                <a href="/login" class="btn-login">Iniciar sesión</a>
-                <a href="/register" class="btn-signup">Crear cuenta</a>
+                {% if user.is_authenticated %}
+                    <span>Bienvenido, {{ user.first_name }}!</span>
+                    <a href="/logout" class="btn-logout">Cerrar sesión</a>
+                {% else %}
+                    <a href="/login" class="btn-login">Iniciar sesión</a>
+                    <a href="/register" class="btn-signup">Crear cuenta</a>
+                {% endif %}
             </div>
         </div>
     </header>

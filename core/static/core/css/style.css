@@ -452,3 +452,30 @@ body {
         padding: 12px;
     }
 }
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-profile-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-profile {
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: #f0f0f0;
+}
+
+.btn-logout {
+    color: #e74c3c;
+    text-decoration: none;
+    font-size: 0.9em;
+}

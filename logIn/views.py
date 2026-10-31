@@ -39,7 +39,9 @@ def register(request):
             # Guardamos el usuario de forma segura
             user = form.save(commit=False)
             # Si el username es obligatorio en Django y usas el email como username:
-            user.username = form.cleaned_data['email'] 
+            user.username = form.cleaned_data['email']
+            user.first_name = form.cleaned_data['name']
+            user.last_name = form.cleaned_data['lastname']
             user.set_password(form.cleaned_data['password'])
             user.save()
             return redirect('/login/')  
@@ -48,3 +50,9 @@ def register(request):
     else:
         form = RegisterForm()
     return render(request, 'logIn/register.html', {'form': form})
+
+
+def logout_view(request):
+    from django.contrib.auth import logout
+    logout(request)
+    return redirect('/')  # Redirige a la página de inicio después del logout
